@@ -9,7 +9,7 @@ import org.junit.jupiter.params.provider.MethodSource;
 
 import java.util.stream.Stream;
 
-class D_QuikSortTest {
+class E_MergeSortTest {
 
   static int[] act1, exp1, act2, exp2, act3, exp3;
 
@@ -26,15 +26,16 @@ class D_QuikSortTest {
   static Stream<Arguments> provideAscendingSource() {
     return Stream.of(
         Arguments.of(act1, exp1),
-        Arguments.of(act2, exp2)
+        Arguments.of(act2, exp2),
+        Arguments.of(act3, exp3)
     );
   }
 
-  @DisplayName("퀵 정렬 테스트")
+  @DisplayName("병합 정렬 테스트")
   @ParameterizedTest
   @MethodSource("provideAscendingSource")
-  void testQuickSort(int[] act, int[] exp){
-    D_QuickSort.solution(act); // 원본(act) 자체가 정렬됨
+  void testMergeSort(int[] act, int[] exp){
+    E_MergeSort.solution(act); // 원본(act) 자체가 정렬됨
     Assertions.assertArrayEquals(act, exp); // 배열 요소가 모두 같으면 성공
 
   }
